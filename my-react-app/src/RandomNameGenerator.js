@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 
-//fun little project. uses what we learned in class. enjoy.open source and open to contribution...
-
 const names = [
-    { name: "Denis", weight: 0.1, points: 0 },
-    { name: "Xiang", weight: 0.1, points: 0 },
-    { name: "Ricky", weight: 0.1, points: 0 },
-    { name: "Carlos", weight: 0.1, points: 0 },
-    { name: "Leo", weight: 0.1, points: 0 },
-    { name: "Tyler", weight: 0.1, points: 0 },
-    { name: "Jaylyn", weight: 0.1, points: 0 },
-    { name: "Yaira", weight: 0.1, points: 0 },
-    { name: "Jaqueila", weight: 0.1, points: 0 },
-    { name: "Kuyne", weight: 0.1, points: 0 },
-  ];
+  { name: "Denis", weight: 0.1, points: 0 },
+  { name: "Xiang", weight: 0.1, points: 0 },
+  { name: "Ricky", weight: 0.1, points: 0 },
+  { name: "Carlos", weight: 0.1, points: 0 },
+  { name: "Leo", weight: 0.1, points: 0 },
+  { name: "Tyler", weight: 0.1, points: 0 },
+  { name: "Jaylyn", weight: 0.1, points: 0 },
+  { name: "Yaira", weight: 0.1, points: 0 },
+  { name: "Jaqueila", weight: 0.1, points: 0 },
+  { name: "Kuyne", weight: 0.1, points: 0 },
+];
 
 const RandomNameGenerator = () => {
   const [randomName, setRandomName] = useState("");
@@ -39,20 +37,22 @@ const RandomNameGenerator = () => {
 
   const [nameVisible, setNameVisible] = useState(false);
 
-const handleGenerateClick = () => {
-  generateRandomName();
-  setNameVisible(false);
-  setTimeout(() => {
-    setNameVisible(true);
-  }, 100);
-};
+  const handleGenerateClick = () => {
+    generateRandomName();
+    setNameVisible(false);
+    setTimeout(() => {
+      setNameVisible(true);
+    }, 100);
+  };
 
   const handleNameSelection = (event) => {
     setSelectedName(event.target.value);
   };
 
   const removeSelectedName = () => {
-    const updatedGenerationList = generationList.filter((name) => name.name !== selectedName);
+    const updatedGenerationList = generationList.filter(
+      (name) => name.name !== selectedName
+    );
     setGenerationList(updatedGenerationList);
     setSelectedName("");
   };
@@ -74,7 +74,6 @@ const handleGenerateClick = () => {
   };
 
   const resetPointsAndName = () => {
-    // Add animation class to trigger cool effect
     setResetClicked(true);
     setTimeout(() => {
       setResetClicked(false);
@@ -87,12 +86,18 @@ const handleGenerateClick = () => {
   return (
     <div className="container">
       <h1>Random Name Generator</h1>
-      <button className="glow-on-hover" onClick={handleGenerateClick}>Generate</button>
-      <p className={`name ${nameVisible ? 'show' : ''}`}>{randomName}</p>
+      <button className="glow-on-hover" onClick={handleGenerateClick}>
+        Generate
+      </button>
+      <p className={`name ${nameVisible ? "show" : ""}`}>{randomName}</p>
 
       <div>
         <h2>Select a Name to Remove or To Add Points Too:</h2>
-        <select value={selectedName} onChange={handleNameSelection}>
+        <select
+          className="select-name"
+          value={selectedName}
+          onChange={handleNameSelection}
+        >
           <option value="">-- Select a Name --</option>
           {generationList.map((name) => (
             <option key={name.name} value={name.name}>
@@ -103,7 +108,6 @@ const handleGenerateClick = () => {
         <button onClick={removeSelectedName}>Remove</button>
         <button onClick={() => addPoints(selectedName, 1)}>Add 1 Point</button>
         <button onClick={() => addPoints(selectedName, 3)}>Add 3 Points</button>
-        
       </div>
 
       <div>
@@ -114,13 +118,24 @@ const handleGenerateClick = () => {
           </p>
         ))}
       </div>
-      <button className={`reset-button ${resetClicked ? "animated" : ""}`} onClick={resetPointsAndName}>
+      <button
+        className={`reset-button ${resetClicked ? "animated" : ""}`}
+        onClick={resetPointsAndName}
+      >
         Reset
       </button>
-      <p>Fun little project. Uses what we learned in class. Enjoy. Open source/no license and open to contribution. (Can link to google sheets/GCP API if want)</p>
-      <p>Repository: <a href="https://github.com/Leonardo-Costa9000/vs-code-practice.git"></a></p>
-      <footer><strong>Created with passion by Leonardo Costa in Florida</strong></footer>
-
+      <p>
+        Fun little project. Uses what we learned in class. Enjoy. Open
+        source/no license and open to contribution. (Can link to google
+        sheets/GCP API if want)
+      </p>
+      <p>
+        Repository:{" "}
+        <a href="https://github.com/Leonardo-Costa9000/vs-code-practice.git">Visit This Repository</a>
+      </p>
+      <footer>
+        <strong>Created with passion by Leonardo Costa in Florida</strong>
+      </footer>
     </div>
   );
 };
