@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 //import Clock from "./clock";
 //import ControlledInputForm from "./controlledInputForms";
 import RandomNameGenerator from "./RandomNameGenerator";
-import "./index.css";
+import "./index.css"; 
 
 
 function MyMainComponent() {
