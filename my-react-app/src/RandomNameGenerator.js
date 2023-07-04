@@ -91,7 +91,7 @@ const RandomNameGenerator = () => {
           </p>
         ))}
       </div>
-      <p>Fun little project. Uses what we learned in class. Enjoy. Open source/no license and open to contribution. (can link to google sheets if want)</p>
+      <p>Fun little project. Uses what we learned in class. Enjoy. Open source/no license and open to contribution. (can link to google sheets/GCP API if want)</p>
       <p>Repository: <a href="https://github.com/Leonardo-Costa9000/Random-Name-Generator-Miami-52.git">https://github.com/Leonardo-Costa9000/Random-Name-Generator-Miami-52.git</a></p>
       <footer>Created with passion by Leonardo Costa in Florida</footer>
 
