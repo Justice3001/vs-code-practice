@@ -20,6 +20,7 @@ const RandomNameGenerator = () => {
   const [selectedName, setSelectedName] = useState("");
   const [generationList, setGenerationList] = useState(names);
   const [pointsList, setPointsList] = useState([]);
+  const [resetClicked, setResetClicked] = useState(false);
 
   const generateRandomName = () => {
     const randomNumber = Math.random();
@@ -35,6 +36,16 @@ const RandomNameGenerator = () => {
       }
     }
   };
+
+  const [nameVisible, setNameVisible] = useState(false);
+
+const handleGenerateClick = () => {
+  generateRandomName();
+  setNameVisible(false);
+  setTimeout(() => {
+    setNameVisible(true);
+  }, 100);
+};
 
   const handleNameSelection = (event) => {
     setSelectedName(event.target.value);
@@ -62,16 +73,27 @@ const RandomNameGenerator = () => {
     setPointsList(updatedPointsList);
   };
 
+  const resetPointsAndName = () => {
+    // Add animation class to trigger cool effect
+    setResetClicked(true);
+    setTimeout(() => {
+      setResetClicked(false);
+      setRandomName("");
+      setSelectedName("");
+      setPointsList([]);
+    }, 1000);
+  };
+
   return (
     <div className="container">
       <h1>Random Name Generator</h1>
-      <button onClick={generateRandomName}>Generate</button>
-      <p>{randomName}</p>
+      <button className="glow-on-hover" onClick={handleGenerateClick}>Generate</button>
+      <p className={`name ${nameVisible ? 'show' : ''}`}>{randomName}</p>
 
       <div>
-        <h2>Select a name to remove or To Add Points:</h2>
+        <h2>Select a Name to Remove or To Add Points Too:</h2>
         <select value={selectedName} onChange={handleNameSelection}>
-          <option value="">-- Select a name --</option>
+          <option value="">-- Select a Name --</option>
           {generationList.map((name) => (
             <option key={name.name} value={name.name}>
               {name.name}
@@ -81,6 +103,7 @@ const RandomNameGenerator = () => {
         <button onClick={removeSelectedName}>Remove</button>
         <button onClick={() => addPoints(selectedName, 1)}>Add 1 Point</button>
         <button onClick={() => addPoints(selectedName, 3)}>Add 3 Points</button>
+        
       </div>
 
       <div>
@@ -91,8 +114,11 @@ const RandomNameGenerator = () => {
           </p>
         ))}
       </div>
-      <p>Fun little project. Uses what we learned in class. Enjoy. Open source/no license and open to contribution. (can link to google sheets/GCP API if want)</p>
-      <p>Repository: <a href="https://github.com/Leonardo-Costa9000/vs-code-practice.git">https://github.com/Leonardo-Costa9000/Random-Name-Generator-Miami-52.git</a></p>
+      <button className={`reset-button ${resetClicked ? "animated" : ""}`} onClick={resetPointsAndName}>
+        Reset
+      </button>
+      <p>Fun little project. Uses what we learned in class. Enjoy. Open source/no license and open to contribution. (Can link to google sheets/GCP API if want)</p>
+      <p>Repository: <a href="https://github.com/Leonardo-Costa9000/vs-code-practice.git"></a></p>
       <footer><strong>Created with passion by Leonardo Costa in Florida</strong></footer>
 
     </div>
