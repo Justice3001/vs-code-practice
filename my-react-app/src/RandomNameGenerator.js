@@ -85,14 +85,14 @@ const RandomNameGenerator = () => {
 
   return (
     <div className="container">
-      <h1>Random Name Generator</h1>
+      <h1>io.</h1>
       <button className="glow-on-hover" onClick={handleGenerateClick}>
         Generate
       </button>
       <p className={`name ${nameVisible ? "show" : ""}`}>{randomName}</p>
 
       <div>
-        <h2>Select a Name to Remove or To Add Points Too:</h2>
+        <h2>Select a Name to Remove or To Add Points Too</h2>
         <select
           className="select-name"
           value={selectedName}
@@ -105,7 +105,7 @@ const RandomNameGenerator = () => {
             </option>
           ))}
         </select>
-        <button onClick={removeSelectedName}>Remove</button>
+        <button id="remove-btn" onClick={removeSelectedName}>Remove</button>
         <button onClick={() => addPoints(selectedName, 1)}>Add 1 Point</button>
         <button onClick={() => addPoints(selectedName, 3)}>Add 3 Points</button>
       </div>
@@ -113,7 +113,7 @@ const RandomNameGenerator = () => {
       <div>
         <h2>Points:</h2>
         {pointsList.map((name) => (
-          <p key={name.name}>
+          <p id="name-points" key={name.name}>
             {name.name}: {name.points}
           </p>
         ))}
@@ -124,12 +124,12 @@ const RandomNameGenerator = () => {
       >
         Reset
       </button>
-      <p>
+      <p id="note1">
         Fun little project. Uses what we learned in class. Enjoy. Open
         source/no license and open to contribution. (Can link to google
         sheets/GCP API if want)
       </p>
-      <p>
+      <p id="note2">
         Repository:{" "}
         <a href="https://github.com/Leonardo-Costa9000/vs-code-practice.git">Visit This Repository</a>
       </p>
