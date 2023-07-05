@@ -12,3 +12,4 @@
 - Create credentials (OAuth client ID) and download the JSON file.
 - more steps involved but this is how you would begin. 
 # clone locally or open in codespaces. have fun.
+- really enjoyed making this. The website is called MIT.io because i wished i went to MIT and to pay homage to them.
