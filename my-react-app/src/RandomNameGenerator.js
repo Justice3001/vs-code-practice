@@ -130,8 +130,7 @@ const RandomNameGenerator = () => {
         sheets/GCP API if want)
       </p>
       <p id="note2">
-        Repository:{" "}
-        <a href="https://github.com/Leonardo-Costa9000/vs-code-practice.git">Visit This Repository</a>
+      <button onClick={() => window.location.href = "https://github.com/Leonardo-Costa9000/vs-code-practice.git"}>Visit This Repository</button>
       </p>
       <footer>
         <strong>Created with passion by Leonardo Costa in Florida</strong>

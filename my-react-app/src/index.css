@@ -1,6 +1,8 @@
 .container {
     text-align: center;
-    padding: 20px;
+    
+    max-height: 100vh; /* Adjust the maximum height as needed */
+    overflow-y: auto;
   }
   
   h1 {
@@ -114,13 +116,12 @@
   }
 
   body {
-    overflow: hidden;
+      
       margin: 0;
       padding: 0;
-      background-image: url('https://source.unsplash.com/random');
+      background-image: url('../public/andrew-ridley-jR4Zf-riEjI-unsplash.jpg');
       background-repeat: no-repeat;
       background-size: cover;
-      overflow-y: scroll;
   }
 
   h2 {
