@@ -14,10 +14,12 @@
 
   
   #name-points {
-    background-color: lightgray;
-    padding: 5px;
-    margin: 5px auto;
-    display: inline-block;
+      font-size: 30px;
+      margin-bottom: 5px;
+      animation: pulsate 2s ease-in-out infinite;
+
+
+    
   }
   
 
@@ -90,26 +92,24 @@
   }
 
   #note1{
-    background-color: lightgray;
-    padding: 5px;
-    margin: 5px;
-
+      font-size: 20px;
+      margin-bottom: 5px;
+      animation: pulsate 2s ease-in-out infinite;
 
   }
 
   #note2{
-    background-color: lightgray;
-    padding: 5px;
-    margin: 5px;
+      font-size: 20px;
+      margin-bottom: 5px;
+      animation: pulsate 2s ease-in-out infinite;
 
 
   }
 
   footer{
-    background-color: lightgray;
-    padding: 5px;
-    margin: 5px;
-    display: inline-flex;
+      font-size: 20px;
+      margin-bottom: 5px;
+      animation: pulsate 2s ease-in-out infinite;
 
   }
 
@@ -120,6 +120,7 @@
       background-image: url('https://source.unsplash.com/random');
       background-repeat: no-repeat;
       background-size: cover;
+      overflow-y: scroll;
   }
 
   h2 {
@@ -131,18 +132,27 @@
     color: #111; font-family: 'Helvetica Neue', sans-serif; font-size:30px; font-weight: normal; letter-spacing: -1px; line-height: 1; text-align: center;
   }
 
-  .name {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    background-color: lightgray;
-    padding: 10px;
-    margin: 10px auto;
-    display: inline-block;
+   .name {
+      font-size: 30px;
+      margin-bottom: 5px;
+      animation: pulsate 2s ease-in-out infinite;
+  }
+
+  @keyframes pulsate {
+    0% {
+      color: yellow;
+    }
+    50% {
+      color: gold;
+    }
+    100% {
+      color: yellow;
+    }
   }
   
   .name.show {
-    opacity: 1;
-    animation: fadeIn 0.5s ease;
+    /*opacity: 1;
+    animation: fadeIn 0.5s ease;*/
   }
   
   @keyframes fadeIn {

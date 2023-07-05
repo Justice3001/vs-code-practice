@@ -85,7 +85,7 @@ const RandomNameGenerator = () => {
 
   return (
     <div className="container">
-      <h1>io.</h1>
+      <h1>MIT.io</h1>
       <button className="glow-on-hover" onClick={handleGenerateClick}>
         Generate
       </button>
