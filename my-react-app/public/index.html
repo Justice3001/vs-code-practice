@@ -28,7 +28,6 @@
         color: #fff;
         border: none;
         cursor: pointer;
-        border: 4px solid transparent;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -72,6 +71,40 @@
         position: fixed;
         top: 0;
         left: 0;
+      }
+
+      @keyframes flipInAnimation {
+        0% {
+          transform: perspective(800px) rotateY(180deg);
+          opacity: 0;
+        }
+        100% {
+          transform: perspective(800px) rotateY(0deg);
+          opacity: 1;
+        }
+      }
+
+      .image-item {
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        animation: flipInAnimation 1s ease;
+        opacity: 0;
+      }
+
+      .image-item.show {
+        opacity: 1;
+      }
+
+      #imageContainer::-webkit-scrollbar {
+        width: 0.5em;
+      }
+
+      #imageContainer::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      #imageContainer::-webkit-scrollbar-thumb {
+        background-color: transparent;
       }
     </style>
   </head>
@@ -230,7 +263,7 @@
             <footer>
               <strong>Created with passion by Leonardo Costa in Florida</strong>
             </footer>
-            <div id="imageContainer"></div>
+            
           </div>
         );
       };
@@ -281,23 +314,29 @@
           "./assests/img/6.jpg",
           "./assests/img/7.jpg",
           "./assests/img/8.jpg",
-          "./assests/img/9.jpg"
+          "./assests/img/9.jpg",
+          "./assests/img/42.jpg",
         ];
+
         const randomIndex = Math.floor(Math.random() * imageFiles.length);
         const randomImage = imageFiles[randomIndex];
 
-        // Create an <img> element
-        const imageElement = document.createElement("img");
-
-        // Set the source of the <img> element to the random image file
-        imageElement.src = randomImage;
-
-        // Append the <img> element to the desired container on the webpage
         const imageContainer = document.getElementById("imageContainer");
         imageContainer.innerHTML = "";
+
+        const imageElement = document.createElement("img");
+        imageElement.src = randomImage;
+        imageElement.classList.add("image-item");
+        imageElement.addEventListener("load", () => {
+        imageElement.classList.add("show");
+        });
+
         imageContainer.appendChild(imageElement);
-      }
+    }
+
     </script>
+
+    
 
     <button onclick="fetchRandomImage()">Something Fun</button>
     <div id="imageContainer"></div>
