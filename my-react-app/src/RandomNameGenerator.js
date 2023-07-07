@@ -135,6 +135,7 @@ const RandomNameGenerator = () => {
       <footer>
         <strong>Created with passion by Leonardo Costa in Florida</strong>
       </footer>
+      
     </div>
   );
 };

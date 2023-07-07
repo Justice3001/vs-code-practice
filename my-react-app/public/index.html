@@ -106,6 +106,42 @@
       #imageContainer::-webkit-scrollbar-thumb {
         background-color: transparent;
       }
+
+      #fun-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  animation: flashingAnimation 1s ease-in-out infinite, bounce 1s infinite;
+}
+
+@keyframes flashingAnimation {
+  0% {
+    background-color: #ffffff; /* Initial background color */
+  }
+  50% {
+    background-color: #ff0000; /* Flashing background color */
+  }
+  100% {
+    background-color: #ffffff; /* Initial background color */
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
     </style>
   </head>
 
@@ -233,6 +269,7 @@
               <button onClick={() => addPoints(selectedName, 3)}>
                 Add 3 Points
               </button>
+              
             </div>
 
             <div>
@@ -262,16 +299,18 @@
             </p>
             <footer>
               <strong>Created with passion by Leonardo Costa in Florida</strong>
+              
             </footer>
             
           </div>
         );
       };
-
+      
       // Render the component
       ReactDOM.render(<RandomNameGenerator />, document.getElementById("root"));
     </script>
 
+     
     <script>
       function fetchRandomImage() {
         const imageFiles = [
@@ -338,8 +377,10 @@
 
     
 
-    <button onclick="fetchRandomImage()">Something Fun</button>
+    
     <div id="imageContainer"></div>
+    <button id="fun-btn" onclick="fetchRandomImage()">Something Fun</button>
+   
 
     <script>
       document
