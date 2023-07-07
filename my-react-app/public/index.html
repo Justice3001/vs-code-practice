@@ -127,6 +127,11 @@
   }
 }
 
+#fun-btn.clicked {
+    animation: none;
+    
+  }
+
 @keyframes bounce {
   0% {
     transform: translateY(0);
@@ -379,7 +384,14 @@
 
     
     <div id="imageContainer"></div>
-    <button id="fun-btn" onclick="fetchRandomImage()">Something Fun</button>
+    <button id="fun-btn" onclick="fetchRandomImage(), handleButtonClick()">Something Fun</button>
+
+    <script>
+      function handleButtonClick() {
+        const button = document.getElementById('fun-btn');
+        button.classList.add('clicked');
+      }
+    </script>
    
 
     <script>
