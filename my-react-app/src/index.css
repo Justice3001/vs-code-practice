@@ -3,6 +3,7 @@
     
     max-height: 100vh; /* Adjust the maximum height as needed */
     overflow-y: auto;
+    overflow: hidden;
   }
   
   h1 {
@@ -134,9 +135,24 @@
   }
 
    .name {
-      font-size: 30px;
-      margin-bottom: 5px;
-      animation: pulsate 2s ease-in-out infinite;
+    margin-bottom: 5px;
+    color: #ff00ff; /* Keep the desired color */
+    font-size: 36px;
+    position: relative;
+    animation: pulsate 2s ease-in-out infinite, coolEffect 2s linear infinite;
+  }
+  
+
+  @keyframes coolEffect {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   @keyframes pulsate {
