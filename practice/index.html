@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Image Download</title>
+  </head>
+  <body>
+    <div>
+      <img
+        id="randomImage"
+        src="https://picsum.photos/200/300"
+        alt="Random Image"
+      />
+    </div>
+    <button id="downloadButton">Download Image</button>
+
+    <script>
+      const downloadButton = document.getElementById("downloadButton");
+      downloadButton.addEventListener("click", () => {
+        const randomImage = document.getElementById("randomImage");
+        const imageUrl = randomImage.src;
+        const link = document.createElement("a");
+        link.href = imageUrl;
+        link.download = "random_image.jpg";
+        link.target = "_blank";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    </script>
+  </body>
+</html>

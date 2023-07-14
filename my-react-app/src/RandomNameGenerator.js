@@ -133,7 +133,7 @@ const RandomNameGenerator = () => {
       <button onClick={() => window.location.href = "https://github.com/Leonardo-Costa9000/vs-code-practice.git"}>Visit This Repository</button>
       </p>
       <footer>
-        <strong>Created with passion by Leonardo Costa in Florida</strong>
+      <strong>Created with </strong> <strong id ="heart"> ♥ </strong> <strong> by Leonardo Costa in Florida</strong>
       </footer>
       
     </div>

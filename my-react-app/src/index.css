@@ -88,6 +88,10 @@
       100% { background-position: 0 0; }
   }
 
+  #heart{
+    color: #ff0000;
+    font-size: 30px;
+  }
   
   p {
     font-size: 18px;
