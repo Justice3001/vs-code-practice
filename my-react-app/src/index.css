@@ -272,6 +272,56 @@ button:hover {
 }
 
 
+.loading-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-box h1 {
+  font-size: 24px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.waviy {
+  position: relative;
+}
+
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 50px;
+  color: black;
+  text-transform: uppercase;
+  animation: flip 1.5s infinite;
+  animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes flip {
+  0%, 80% {
+    transform: rotateY(360deg);
+  }
+}
+
+.quote{
+  font-size: 35px;
+}
+
+
 
 
   

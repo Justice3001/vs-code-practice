@@ -150,12 +150,21 @@
     </style>
   </head>
 
+  
+
   <body>
     <div class="cover">
       <button id="enterButton" class="enter-button">Enter</button>
     </div>
 
     <div id="root" class="hidden"></div>
+    
+    
+
+
+    
+
+    
 
     <script type="text/babel">
       const names = [
@@ -169,6 +178,8 @@
         { name: "Yaira", weight: 0.1, points: 0 },
         { name: "Jaqueila", weight: 0.1, points: 0 },
         { name: "Kuyne", weight: 0.1, points: 0 },
+        { name: "Christopher", weight: 0.1, points: 0 },
+        { name: "Jeankory V.", weight: 0.1, points: 0 }
       ];
 
       const RandomNameGenerator = () => {
@@ -412,12 +423,14 @@
 
               // Show the React app
               root.classList.remove("hidden");
-            }, 500); // Adjust the duration of the fade-out animation if needed
+            }, 450); // Adjust the duration of the fade-out animation if needed
           }
 
           // Remove enter button
           document.getElementById("enterButton").remove();
         });
     </script>
+
+    
   </body>
 </html>
