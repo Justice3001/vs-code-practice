@@ -27,23 +27,16 @@ function MyMainComponent() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const startTime = performance.now();
+    const delay = 6500; // Delay in milliseconds
 
     // Simulate a delay before loading the React app
-    setTimeout(() => {
-      const endTime = performance.now();
-      const elapsedTime = endTime - startTime;
-      const minDelay = 4000; // Minimum delay in milliseconds
+    const timeoutId = setTimeout(() => {
+      setIsLoading(false);
+    }, delay);
 
-      if (elapsedTime < minDelay) {
-        // If the elapsed time is less than the minimum delay, wait for the remaining time
-        setTimeout(() => {
-          setIsLoading(false);
-        }, minDelay - elapsedTime);
-      } else {
-        setIsLoading(false);
-      }
-    }, 7000); // Adjust the total delay (in milliseconds) as needed
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
