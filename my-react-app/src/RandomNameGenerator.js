@@ -11,6 +11,8 @@ const names = [
   { name: "Yaira", weight: 0.1, points: 0 },
   { name: "Jaqueila", weight: 0.1, points: 0 },
   { name: "Kuyne", weight: 0.1, points: 0 },
+  { name: "Christopher", weight: 0.1, points: 0 },
+  { name: "Jeankory V.", weight: 0.1, points: 0 }
 ];
 
 const RandomNameGenerator = () => {
